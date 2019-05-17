@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+    {% for post in posts %}
+        <div>
+            <h2><a href = "{% url 'detail' post.id %}">{{post.title}}</a></h2>
+            <p>{{post.created_date}}</p>
+            <p>{{post.text}}</p>
+        </div>
+    {% endfor %}
+    <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              연락처
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button">010-3432-6912</button>
+              <button class="dropdown-item" type="button">yesyerinno@naver.com</button>
+            </div>
+          </div>
+{% endblock %}
+
